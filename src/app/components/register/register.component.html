@@ -1,0 +1,56 @@
+<div class="registration-form">
+  <h2>Registration Form</h2>
+
+  <div class="form-selector">
+    <button (click)="selectForm('student')">Student</button>
+    <button (click)="selectForm('teacher')">Teacher</button>
+  </div>
+
+  <!-- Student Form -->
+  <form *ngIf="selectedForm === 'student'" [formGroup]="studentForm" (ngSubmit)="submitStudentForm()">
+    <div class="form-group">
+      <label for="hno">Hall Ticket Number</label>
+      <input id="hno" formControlName="hno" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" required />
+    </div>
+    <div class="form-group">
+      <label for="branch">Branch</label>
+      <input id="branch" formControlName="branch" type="text" required />
+    </div>
+    <div class="form-buttons">
+      <button type="submit" [disabled]="!studentForm.valid">Submit</button>
+      <button type="button" (click)="studentForm.reset()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Teacher Form -->
+  <form *ngIf="selectedForm === 'teacher'" [formGroup]="teacherForm" (ngSubmit)="submitTeacherForm()">
+    <div class="form-group">
+      <label for="tid">ID</label>
+      <input id="tid" formControlName="tid" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" required />
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input id="subject" formControlName="subject" type="text" required />
+    </div>
+    <div class="form-buttons">
+      <button type="submit" [disabled]="!teacherForm.valid">Submit</button>
+      <button type="button" (click)="teacherForm.reset()">Reset</button>
+    </div>
+  </form>
+</div>

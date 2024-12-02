@@ -1,0 +1,76 @@
+<div class="student-details-container">
+  <table>
+    <thead>
+      <tr>
+        <th>HNo</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Total Marks</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.hno }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.branch }}</td>
+        <td>{{ calculateTotalMarks(student) }}</td>
+        <td>
+          <button (click)="openForm(student, 'add')">Add</button>
+          <button (click)="openForm(student, 'update')">Update</button>
+          <button (click)="deleteStudent(student)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="student-marks-container">
+  <table>
+    <thead>
+      <tr>
+        <th>HNo</th>
+        <th *ngFor="let subject of subjects">{{ subject }}</th>
+        <th>total</th>
+        <th>Total Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentmarks">
+          <td>{{ student.hno }}</td>
+          <td>{{ student.telugu }}</td>
+          <td>{{ student.hindi }}</td>
+          <td>{{ student.english }}</td>
+          <td>{{ student.mathes }}</td>
+          <td>{{ student.phisics }}</td>
+          <td>{{ student.chemistry }}</td>
+          <td>{{ student.social }}</td>
+          <td>{{ calculateTotalMarks(student)}}</td>
+          <td>{{ calculateGrade(student) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Form -->
+<div class="modal" *ngIf="showForm">
+  <div class="modal-content">
+    <h2>{{ formType === 'add' ? 'Add Marks' : 'Update Marks' }}</h2>
+    <form (ngSubmit)="submitMarksForm()">
+      <div *ngFor="let subject of subjects">
+        <label>{{ subject }}</label>
+        <input
+          type="number"
+          [(ngModel)]="currentMarks[subject]"
+          [name]="subject"
+          required
+        />
+      </div>
+      <div class="form-actions">
+        <button type="submit">Submit</button>
+        <button type="button" (click)="closeForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+

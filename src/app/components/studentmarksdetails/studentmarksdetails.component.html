@@ -1,0 +1,26 @@
+<div class="marks-table-container">
+    <h2>Student Marks</h2>
+    <table class="marks-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of subjects">
+          <td>{{ subject.name }}</td>
+          <td>{{ subject.marks |json }}</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>{{ totalMarks }}</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Grade</strong></td>
+          <td><strong>{{ grade }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

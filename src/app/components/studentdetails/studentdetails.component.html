@@ -1,0 +1,37 @@
+<div class="student-details-container">
+  <!-- Top Navbar with Menu Icon -->
+  <div class="top-navbar">
+    <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+    <span class="title">Student Details</span>
+  </div>
+
+  <!-- Dropdown menu -->
+  <div *ngIf="menuOpen" class="dropdown-menu">
+    <button mat-button (click)="showResult()">Result</button>
+    <button mat-button (click)="showAttendance()">Attendance</button>
+  </div>
+
+  <!-- Student Icon and Details -->
+  <div class="student-icon">
+    <mat-icon class="student-icon-img">school</mat-icon>
+  </div>
+
+  <div class="student-details">
+    <div class="detail">
+      <label>Full Name:</label>
+      <span>{{ studentDetails?.name }}</span>
+    </div>
+    <div class="detail">
+      <label>Hno:</label>
+      <span>{{ studentDetails?.hno }}</span>
+    </div>
+    <div class="detail">
+      <label>branch:</label>
+      <span>{{ studentDetails?.branch }}</span>
+    </div>
+    <div class="detail">
+      <label>password:</label>
+      <span>{{ studentDetails?.password }}</span>
+    </div>
+  </div>
+</div>

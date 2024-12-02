@@ -1,0 +1,93 @@
+/* General styles for the outer container */
+.outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f3f4f6; /* Light background */
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute; /* Allows precise placement */
+  top: 10%; /* Adjust based on desired vertical position */
+  left: 0; /* Aligns with the starting position of the page content */
+  margin-left: 20px; /* Optional: Adds space from the edge of the page */
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start; /* Aligns lines to the start */
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #3498db; /* Blue color for lines */
+  border-radius: 2px;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 10px; /* Aligns dropdown with the button */
+  top: 20px; /* Position below the button */
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 0;
+  width: 200px; /* Optional: Consistent width for the dropdown */
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #e1f5fe; /* Light blue hover effect */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Header styles */
+.header h1 {
+  color: #ffffff;
+  background-color: #3498db; /* Blue background for text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  color: #ffffff;
+  background-color: #2ecc71; /* Green background for text */
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Center the header content */
+.header {
+  text-align: center;
+}

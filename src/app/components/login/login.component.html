@@ -1,0 +1,43 @@
+<div class="registration-form">
+    <h2>Login Form</h2>
+  
+    <div class="form-selector">
+      <button (click)="selectForm('student')">Student</button>
+      <button (click)="selectForm('teacher')">Teacher</button>
+    </div>
+  
+    <!-- Student Form -->
+    <form *ngIf="selectedForm === 'student'" [formGroup]="studentForm" (ngSubmit)="submitStudentForm()">
+      
+      <div class="form-group">
+        <label for="hno">hall ticket number</label>
+        <input id="hno" formControlName="hno" type="text" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" required />
+      </div>
+      <div class="form-buttons">
+        <button type="submit" [disabled]="!studentForm.valid">Login</button>
+        <button type="button" (click)="studentForm.reset()">Reset</button>
+      </div>
+    </form>
+  
+    <!-- Teacher Form -->
+    <form *ngIf="selectedForm === 'teacher'" [formGroup]="teacherForm" (ngSubmit)="submitTeacherForm()">
+      <div class="form-group">
+        <label for="tid">Teacher Id</label>
+        <input id="tid" formControlName="tid" type="text" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" required />
+      </div>
+      <div class="form-buttons">
+        <button type="submit" [disabled]="!teacherForm.valid">Login</button>
+        <button type="button" (click)="teacherForm.reset()">Reset</button>
+      </div>
+    </form>
+  
+  </div>
+  

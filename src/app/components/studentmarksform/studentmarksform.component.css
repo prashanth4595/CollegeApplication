@@ -1,0 +1,15 @@
+.student-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table-container th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.student-table-container th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
